@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>RSS feeds</title>
+  <meta name="description" content="What is RSS RSS is an xml-based protocol for aggregation and syndication of content. It is essentially metadata for your content be it news, blogs or audio f...">
+
+  <link rel="stylesheet" href="/jekyllblog/assets/main.css">
+  <link rel="canonical" href="www.eduardonprieto.com/jekyllblog/tech/2017/04/12/rss-feeds.html">
+  <link rel="alternate" type="application/rss+xml" title="Eddie&#39;s Awesome Blog" href="/jekyllblog/feed.xml">
+  
+  
+</head>
+
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/jekyllblog/">Eddie&#39;s Awesome Blog</a>
+
+    <nav class="site-nav">
+      <span class="menu-icon">
+        <svg viewBox="0 0 18 15" width="18px" height="15px">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </span>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/jekyllblog/about/">About</a>
+          
+        
+          
+          <a class="page-link" href="/jekyllblog/about/">About</a>
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">RSS feeds</h1>
+    <p class="post-meta"><time datetime="2017-04-12T12:00:00-04:00" itemprop="datePublished">Apr 12, 2017</time></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <h1 id="what-is-rss">What is RSS</h1>
+<p>RSS is an xml-based protocol for aggregation and syndication of content. It is essentially metadata for your content be it news, blogs or audio files. It includes information such as title, author, and links to your content. The attributes used in the RSS specification or broad enough that they work for any content. All that is needed is for each individual content to have its own location (url). These days practically every news site, blog and podcast has an RSS feed. RSS has gone through several iterations over the years, but the latest is <strong>R</strong>eally <strong>S</strong>imple <strong>S</strong>indication version 2.0. There is also an alternative to RSS called Atom. Because it is based on RSS and features more functionality, some refer to Atom as RSS 3.0. Here is the current <a href="http://cyber.harvard.edu/rss/rss.html">v2 specification</a> hosted by Harvard since 2003.</p>
+
+<h1 id="example">Example</h1>
+
+<p>Let’s take a look at an example. The snippet below is an example of a live RSS feed taken from <a href="http://www.space.com/home/feed/site.xml">Space.com</a>:</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;rss</span> <span class="na">xmlns:media=</span><span class="s">"http://search.yahoo.com/mrss/"</span> <span class="na">version=</span><span class="s">"2.0"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;channel&gt;</span>
+		<span class="nt">&lt;title&gt;</span>Space.com<span class="nt">&lt;/title&gt;</span>
+		<span class="nt">&lt;link&gt;</span>http://www.space.com<span class="nt">&lt;/link&gt;</span>
+		<span class="nt">&lt;description&gt;</span>Something amazing every day.<span class="nt">&lt;/description&gt;</span>
+		<span class="nt">&lt;lastBuildDate&gt;</span>Wed, 12 Apr 2017 12:37:12 EDT<span class="nt">&lt;/lastBuildDate&gt;</span>
+		<span class="nt">&lt;language&gt;</span>en-us<span class="nt">&lt;/language&gt;</span>
+		<span class="nt">&lt;image&gt;</span>
+			<span class="nt">&lt;title&gt;</span>Space.com<span class="nt">&lt;/title&gt;</span>
+			<span class="nt">&lt;url&gt;</span>
+				http://www.space.com/resources/img/feed-site-logo.jpg?8a7648e
+			<span class="nt">&lt;/url&gt;</span>
+			<span class="nt">&lt;link&gt;</span>http://www.space.com<span class="nt">&lt;/link&gt;</span>
+			<span class="nt">&lt;width&gt;</span>88<span class="nt">&lt;/width&gt;</span>
+			<span class="nt">&lt;height&gt;</span>31<span class="nt">&lt;/height&gt;</span>
+		<span class="nt">&lt;/image&gt;</span>
+		<span class="nt">&lt;item&gt;</span>
+			<span class="nt">&lt;title&gt;</span>
+				Space Station ROI - Astronaut’s Mission Update Shows Benefits for Humanity | Video
+			<span class="nt">&lt;/title&gt;</span>
+			<span class="nt">&lt;link&gt;</span>
+				http://www.space.com/36439-space-station-roi-astronauts-mission-update-shows-benefits-for-humanity-video.html
+			<span class="nt">&lt;/link&gt;</span>
+			<span class="nt">&lt;description&gt;</span>
+				In just explaining the experiments conducted on the International Space Station (ISS) and his daily routine during the European Space Agency’s ‘Proxima’ mission, astronaut Thomas Pesquet reveals why the ISS is such a valuable resource for humans.
+			<span class="nt">&lt;/description&gt;</span>
+			<span class="nt">&lt;source</span> <span class="na">url=</span><span class="s">"http://www.space.com"</span><span class="nt">&gt;</span>spaceflight<span class="nt">&lt;/source&gt;</span>
+			<span class="nt">&lt;pubDate&gt;</span>Wed, 12 Apr 2017 10:29:00 EDT<span class="nt">&lt;/pubDate&gt;</span>
+			<span class="nt">&lt;media:content</span> <span class="na">type=</span><span class="s">"image/jpeg"</span> <span class="na">url=</span><span class="s">"https://img.purch.com/rc/160x100/aHR0cDovL3d3dy5zcGFjZS5jb20vaW1hZ2VzL2kvMDAwLzA2NC82ODcvb3JpZ2luYWwvU1BfMTcwNDExX3NwYWNlX3N0YXRpb25fcm9pLmpwZw=="</span><span class="nt">/&gt;</span>
+		<span class="nt">&lt;/item&gt;</span>
+	<span class="nt">&lt;/channel&gt;</span>
+<span class="nt">&lt;/rss&gt;</span></code></pre></figure>
+
+<p>The first thing to note is that this RSS “feed” is written using the RSS v.2.0 specification. It contains a high level <code class="highlighter-rouge">&lt;rss&gt;</code> attribute and a <code class="highlighter-rouge">&lt;channel&gt;</code> attribute within it. Right after that is some metadata about the website or feed itself, and then an <code class="highlighter-rouge">&lt;item&gt;</code> attribute for each individual item, be it a blog post or a audio file. Within each item, you have the <code class="highlighter-rouge">&lt;title&gt;</code> of the item and a <code class="highlighter-rouge">&lt;link&gt;</code> to that item. These are the essential elements to any RSS feed.</p>
+
+<h1 id="repositories-and-apps">Repositories and Apps</h1>
+
+<p>One of the great things of RSS being an XML format is its ease of sharing. There are mulitple RSS repositories online that you can submit your RSS feed to so that others can find your content even easier. Using things like <code class="highlighter-rouge">&lt;category&gt;</code> tags in your RSS feed help with this discovery. For typical html websites with article structures such as news or blog sites, <a href="http://feedly.com">Feedly.com</a> is perhaps the most popular. It allows you to copy and paste and RSS feed URL to add the feed, and categorize and organize all your feeds right within Feedly.</p>
+
+<h2 id="podcasts">Podcasts</h2>
+
+<p>Podcasts are the reason I chose to learn about RSS feeds in the first place. I have been listening to podcasts daily for about over 2 years now and I wanted to get a better understanding of how it works. There are 3 big repositories for hosting your podcast: iTunes, Stitcher, and SoundCloud. Just about any podcast you want to hear will be found in at at least one, if not all three of those repositories. Once you have your podcast and RSS feed ready, simply submit it to one of those repositories and any service that has access to that repository can make that podcast accessible to them. Many apps available on the Google Play (I can’t speak for ithe iTunes App Store since I am an Android user) such as <a href="https://www.shiftyjelly.com/pocketcasts/">Pocket Casts</a>, <a href="http://www.beyondpod.mobi/android/index.htm">Beyond Pod</a> and Podcast Addict are able to access these repositories and “subscribe” to thousands of feeds either by manually entering an RSS feed url or through their discovery search interface. Once subscribed, they allow you to download or stream individual episodes, create playlists, group into categories, set automatic updates, and more.</p>
+
+<h1 id="using-rss-in-your-website">Using RSS in your website</h1>
+
+<p>It’s relatively easy to get started with having an RSS feed for your website. If you want full control over exactly what shows up in your RSS feed, you can of course write the entire rss feed by hand. Once you have the structure of the feed, all that needs to change is each individual item to match your content and add a new item whenever you add new content. If you are using Wordpress, you are in luck because WordPress automatically generates an RSS feed whenever you publish your content. It generates RSS feeds for all 4 specifications existing specifications, including v2.0 and even Atom. You can see the feed by going to http://www.&lt;my_wordpress_blog&gt;.com/feed. The default feed is v2.0. I also discovered that Jekyll, a static site generator built on Ruby that I am use to build this site, also includes a ruby gem at installation that automatically populates a feed.xml file when you build the site. For other options, there are several web-based RSS generators that, with some help on your part, try to generate an XML feed as close as possible to the structure of the entered url. Soundcloud supports the same feature if you choose to host the audio files for your podcast there.</p>
+
+<h1 id="closing">Closing</h1>
+
+<p>I would be remiss if I didn’t plug in <a href="http://www.eduardonprieto.com/jekyllblog/feed.xml">my blog RSS feed</a>, so that you can follow the posts I make about what I’m learning or anything that interests me.</p>
+
+  </div>
+
+  
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Eddie&#39;s Awesome Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>
+            
+              Eddie Prieto
+            
+            </li>
+            
+            <li><a href="mailto:eprieto.n@gmail.com">eprieto.n@gmail.com</a></li>
+            
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>A blog about music, Star Wars, technology, and sometimes all at the same time. 
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

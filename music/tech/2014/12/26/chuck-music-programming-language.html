@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Chuck: Music Programming Language</title>
+  <meta name="description" content="an Introduction to ChucK">
+
+  <link rel="stylesheet" href="/jekyllblog/assets/main.css">
+  <link rel="canonical" href="www.eduardonprieto.com/jekyllblog/music/tech/2014/12/26/chuck-music-programming-language.html">
+  <link rel="alternate" type="application/rss+xml" title="Eddie&#39;s Awesome Blog" href="/jekyllblog/feed.xml">
+  
+  
+</head>
+
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/jekyllblog/">Eddie&#39;s Awesome Blog</a>
+
+    <nav class="site-nav">
+      <span class="menu-icon">
+        <svg viewBox="0 0 18 15" width="18px" height="15px">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </span>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/jekyllblog/about/">About</a>
+          
+        
+          
+          <a class="page-link" href="/jekyllblog/about/">About</a>
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Chuck: Music Programming Language</h1>
+    <p class="post-meta"><time datetime="2014-12-26T23:00:00-05:00" itemprop="datePublished">Dec 26, 2014</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Eduardo Prieto</span></span></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>ChucK is a music computer programming language created by Ge Wang for his dissertation at Stanford University. He is the creator of the company Smule, most known for its Ocarina mobile music app, which is built on ChucK. He is also the leader of the Stanford Laptop Orchestra, a group that composes music completely with ChucK. Here is <a href="http://chuck.cs.princeton.edu/">ChucK’s website</a>, with download instructions and documentation to get you started. Ge also did a <a href="https://www.ted.com/talks/ge_wang_the_diy_orchestra_of_the_future">TedTalk</a> about ChucK and its uses, with a small tutorial on how the language works. If you like music and you like programming, you will love ChucK. It is similar enough to other programming languages that if you are already familiar with one, you can be creating your own samples within a few minutes of setting up ChucK and seeing a few basic examples.</p>
+
+<p>Basically how ChucK works is that it has its own virtual machine, that, while running, takes input in the form of frequencies and time durations. The basic structure of a ChucK program is as follows: you create a connection to an output (a speaker), assign frequencies to variables and specify the duration that these frequencies will play for. Here is a simple C major scale written in ChucK:</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">SinOsc</span> <span class="n">s</span> <span class="o">=&gt;</span> <span class="n">dac</span><span class="o">;</span>
+
+<span class="c1">//up</span>
+   <span class="mi">523</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="na">freq</span><span class="o">;</span> <span class="o">.</span><span class="mi">5</span><span class="o">::</span><span class="n">second</span> <span class="o">=&gt;</span> <span class="n">now</span><span class="o">;</span> <span class="c1">//C</span>
+   <span class="mi">587</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="na">freq</span><span class="o">;</span> <span class="o">.</span><span class="mi">5</span><span class="o">::</span><span class="n">second</span> <span class="o">=&gt;</span> <span class="n">now</span><span class="o">;</span> <span class="c1">//D</span>
+   <span class="mi">659</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="na">freq</span><span class="o">;</span> <span class="o">.</span><span class="mi">5</span><span class="o">::</span><span class="n">second</span> <span class="o">=&gt;</span> <span class="n">now</span><span class="o">;</span> <span class="c1">//E</span>
+   <span class="mi">699</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="na">freq</span><span class="o">;</span> <span class="o">.</span><span class="mi">5</span><span class="o">::</span><span class="n">second</span> <span class="o">=&gt;</span> <span class="n">now</span><span class="o">;</span> <span class="c1">//F</span>
+   <span class="mi">784</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="na">freq</span><span class="o">;</span> <span class="o">.</span><span class="mi">5</span><span class="o">::</span><span class="n">second</span> <span class="o">=&gt;</span> <span class="n">now</span><span class="o">;</span> <span class="c1">//G</span>
+   <span class="mi">880</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="na">freq</span><span class="o">;</span> <span class="o">.</span><span class="mi">5</span><span class="o">::</span><span class="n">second</span> <span class="o">=&gt;</span> <span class="n">now</span><span class="o">;</span> <span class="c1">//A</span>
+   <span class="mi">988</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="na">freq</span><span class="o">;</span> <span class="o">.</span><span class="mi">5</span><span class="o">::</span><span class="n">second</span> <span class="o">=&gt;</span> <span class="n">now</span><span class="o">;</span> <span class="c1">//B</span>
+   <span class="mi">1047</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="na">freq</span><span class="o">;</span> <span class="mi">1</span><span class="o">::</span><span class="n">second</span> <span class="o">=&gt;</span> <span class="n">now</span><span class="o">;</span> <span class="c1">//C</span>
+
+<span class="c1">//down</span>
+   <span class="mi">1047</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="na">freq</span><span class="o">;</span> <span class="o">.</span><span class="mi">5</span><span class="o">::</span><span class="n">second</span> <span class="o">=&gt;</span> <span class="n">now</span><span class="o">;</span> <span class="c1">//C</span>
+   <span class="mi">988</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="na">freq</span><span class="o">;</span> <span class="o">.</span><span class="mi">5</span><span class="o">::</span><span class="n">second</span> <span class="o">=&gt;</span> <span class="n">now</span><span class="o">;</span> <span class="c1">//B</span>
+   <span class="mi">880</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="na">freq</span><span class="o">;</span> <span class="o">.</span><span class="mi">5</span><span class="o">::</span><span class="n">second</span> <span class="o">=&gt;</span> <span class="n">now</span><span class="o">;</span> <span class="c1">//A</span>
+   <span class="mi">784</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="na">freq</span><span class="o">;</span> <span class="o">.</span><span class="mi">5</span><span class="o">::</span><span class="n">second</span> <span class="o">=&gt;</span> <span class="n">now</span><span class="o">;</span> <span class="c1">//G</span>
+   <span class="mi">699</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="na">freq</span><span class="o">;</span> <span class="o">.</span><span class="mi">5</span><span class="o">::</span><span class="n">second</span> <span class="o">=&gt;</span> <span class="n">now</span><span class="o">;</span> <span class="c1">//F</span>
+   <span class="mi">659</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="na">freq</span><span class="o">;</span> <span class="o">.</span><span class="mi">5</span><span class="o">::</span><span class="n">second</span> <span class="o">=&gt;</span> <span class="n">now</span><span class="o">;</span> <span class="c1">//E</span>
+   <span class="mi">587</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="na">freq</span><span class="o">;</span> <span class="o">.</span><span class="mi">5</span><span class="o">::</span><span class="n">second</span> <span class="o">=&gt;</span> <span class="n">now</span><span class="o">;</span> <span class="c1">//D</span>
+   <span class="mi">523</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="na">freq</span><span class="o">;</span> <span class="mi">1</span><span class="o">::</span><span class="n">second</span> <span class="o">=&gt;</span> <span class="n">now</span><span class="o">;</span> <span class="c1">//C</span>
+
+<span class="c1">//arpeggio</span>
+   <span class="mi">523</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="na">freq</span><span class="o">;</span> <span class="o">.</span><span class="mi">333</span><span class="o">::</span><span class="n">second</span> <span class="o">=&gt;</span> <span class="n">now</span><span class="o">;</span> <span class="c1">//C</span>
+   <span class="mi">659</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="na">freq</span><span class="o">;</span> <span class="o">.</span><span class="mi">333</span><span class="o">::</span><span class="n">second</span> <span class="o">=&gt;</span> <span class="n">now</span><span class="o">;</span> <span class="c1">//E</span>
+   <span class="mi">784</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="na">freq</span><span class="o">;</span> <span class="o">.</span><span class="mi">333</span><span class="o">::</span><span class="n">second</span> <span class="o">=&gt;</span> <span class="n">now</span><span class="o">;</span> <span class="c1">//G</span>
+   <span class="mi">1047</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="na">freq</span><span class="o">;</span> <span class="o">.</span><span class="mi">333</span><span class="o">::</span><span class="n">second</span> <span class="o">=&gt;</span> <span class="n">now</span><span class="o">;</span> <span class="c1">//C</span>
+   <span class="mi">784</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="na">freq</span><span class="o">;</span> <span class="o">.</span><span class="mi">333</span><span class="o">::</span><span class="n">second</span> <span class="o">=&gt;</span> <span class="n">now</span><span class="o">;</span> <span class="c1">//G</span>
+   <span class="mi">659</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="na">freq</span><span class="o">;</span> <span class="o">.</span><span class="mi">333</span><span class="o">::</span><span class="n">second</span> <span class="o">=&gt;</span> <span class="n">now</span><span class="o">;</span> <span class="c1">//E</span>
+   <span class="mi">523</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="na">freq</span><span class="o">;</span> <span class="mi">1</span><span class="o">::</span><span class="n">second</span> <span class="o">=&gt;</span> <span class="n">now</span><span class="o">;</span> <span class="c1">//C</span></code></pre></figure>
+
+<p>Here is a sound clip:</p>
+
+<p>coming soon</p>
+
+<p>The first line (SinOsc s =&gt; dac;) creates a sine wave oscillator and connects it to the DAC. The next line (523 =&gt; s.freq; .5::second =&gt; now;) creates a frequency of 523 and plays it for .5 seconds. ChucK reads left to right, so whereas in another language like Java the number on the right is assigned to the variable on the left, ChucK “chucks” (=&gt;) the number 523 to the variable s.freq. These specific frequencies that correspond to real pitches in 440 mHz were easy to obtain. I followed this pitch to frequency mapping chart I found from <a href="http://peabody.sapp.org/class/st2/lab/notehz/">Peabody</a>:</p>
+
+<p><img src="http://blog.eduardonprieto.com/wp-content/uploads/2014/12/Screen-Shot-2014-12-26-at-6.48.49-PM.png" alt="pitch frequencies" /></p>
+
+<p>Let me explain a bit about the durations I chose. Music is measured in “beats per minute” or BPM. 60 bpm means that there is a downbeat every second. By specifying .5 seconds, I am essentially making eigth notes at 60 bpm. There are 3 triplets per beat, so to get the arpeggio in triplet eigth notes, i specfied a time of .333 seconds, or 1/3 of a second. This math can be applied to any tempo with the appropriate calculations. Using that and the pitch frequency chart, is it very well possible to create tonal, “normal” sounding music that one would expect music to sound like. This could even be combined with Music XML (sheet music put into XML format that is used by many music notation software) to quickly produce ChucK code (this is a good topic for another blog post or two).</p>
+
+<p>While that is all well and good, what I think is the most cool and fun part about ChucK is the logic aspect. You can use loops and conditions common to other programming languages to create complex structures. Here is a little more complicated ChucK program utilizing “for loops” and “if statements”.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">SinOsc</span> <span class="n">s</span> <span class="o">=&gt;</span> <span class="n">dac</span><span class="o">;</span>
+
+<span class="mi">0</span> <span class="o">=&gt;</span> <span class="kt">int</span> <span class="n">timer</span><span class="o">;</span>
+
+<span class="k">while</span><span class="o">(</span><span class="kc">true</span><span class="o">){</span>
+	<span class="k">for</span><span class="o">(</span><span class="mi">0</span> <span class="o">=&gt;</span> <span class="kt">int</span> <span class="n">x</span><span class="o">;</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">2</span><span class="o">;</span> <span class="o">++</span><span class="n">x</span><span class="o">){</span>
+		<span class="k">for</span><span class="o">(</span><span class="mi">0</span> <span class="o">=&gt;</span> <span class="kt">int</span> <span class="n">i</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">2</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">){</span>
+			<span class="n">Math</span><span class="o">.</span><span class="na">random2f</span><span class="o">(</span><span class="mi">700</span><span class="o">,</span><span class="mi">900</span><span class="o">)</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="na">freq</span><span class="o">;</span>
+			<span class="mi">200</span><span class="o">::</span><span class="n">ms</span> <span class="o">=&gt;</span> <span class="n">now</span><span class="o">;</span>
+		  <span class="o">}</span>
+		<span class="k">for</span><span class="o">(</span><span class="mi">0</span> <span class="o">=&gt;</span> <span class="kt">int</span> <span class="n">j</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="o">;</span> <span class="o">++</span><span class="n">j</span><span class="o">){</span>
+			<span class="n">Math</span><span class="o">.</span><span class="na">random2f</span><span class="o">(</span><span class="mi">200</span><span class="o">,</span><span class="mi">300</span><span class="o">)</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="na">freq</span><span class="o">;</span>
+			<span class="mi">200</span><span class="o">::</span><span class="n">ms</span> <span class="o">=&gt;</span> <span class="n">now</span><span class="o">;</span>
+		  <span class="o">}</span>
+	 <span class="o">}</span>
+	<span class="k">if</span><span class="o">(</span><span class="n">timer</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="o">){</span>
+		<span class="mi">600</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="na">freq</span><span class="o">;</span> <span class="mi">100</span><span class="o">::</span><span class="n">ms</span> <span class="o">=&gt;</span> <span class="n">now</span><span class="o">;</span>
+		<span class="mi">700</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="na">freq</span><span class="o">;</span> <span class="mi">100</span><span class="o">::</span><span class="n">ms</span> <span class="o">=&gt;</span> <span class="n">now</span><span class="o">;</span>
+		<span class="mi">800</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="na">freq</span><span class="o">;</span> <span class="mi">100</span><span class="o">::</span><span class="n">ms</span> <span class="o">=&gt;</span> <span class="n">now</span><span class="o">;</span>
+		<span class="mi">900</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="na">freq</span><span class="o">;</span> <span class="mi">100</span><span class="o">::</span><span class="n">ms</span> <span class="o">=&gt;</span> <span class="n">now</span><span class="o">;</span>
+	<span class="o">}</span>
+	<span class="k">else</span><span class="o">{</span>
+		<span class="mi">900</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="na">freq</span><span class="o">;</span> <span class="mi">100</span><span class="o">::</span><span class="n">ms</span> <span class="o">=&gt;</span> <span class="n">now</span><span class="o">;</span>
+		<span class="mi">800</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="na">freq</span><span class="o">;</span> <span class="mi">100</span><span class="o">::</span><span class="n">ms</span> <span class="o">=&gt;</span> <span class="n">now</span><span class="o">;</span>
+		<span class="mi">700</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="na">freq</span><span class="o">;</span> <span class="mi">100</span><span class="o">::</span><span class="n">ms</span> <span class="o">=&gt;</span> <span class="n">now</span><span class="o">;</span>
+		<span class="mi">600</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="na">freq</span><span class="o">;</span> <span class="mi">100</span><span class="o">::</span><span class="n">ms</span> <span class="o">=&gt;</span> <span class="n">now</span><span class="o">;</span>
+	 <span class="o">}</span>
+	<span class="o">++</span><span class="n">timer</span><span class="o">;</span> 
+<span class="o">}</span></code></pre></figure>
+
+<p>Here’s what it sounds like:</p>
+
+<p>coming soon</p>
+
+<p>The first for loop that contains two additional for loops is a ⅝ measure that is played 3 times. The math.random2f(700,900) basically means any random frequency between 700 and 900. Then, every other time (given by the if statement) there is either a descending or ascending 4 pattern. This example is structured and will always play out with the same rythm, but because I used random frequencies, no two playthroughs will sound exactly alike. the durations of 200 and 100 ms were arbitraily chose and were not chose to represent any pre-determined tempo.</p>
+
+<p>Another neat aspect of Chuck is its virtual machine. When you click play on a specific piece of code, the virtual machine will continue to play it until you tell it to stop. You can then open another file and play it on top of the one already playing. This allows for really complex layering of music. You can even modify the code as its playing.</p>
+
+<p>As you can imagine, with its logic, randomness and layering in the virtual machine, you can start create really creative and imaginative music using ChucK. It is even accessible to those who don’t understand music theory. You can just as easily pick random frequencies and durations as in the second example and start making music, assuming you know a bit about programming. As I stated in the beginning, if you love music and programming, you’ll definitely love ChucK. I’ve had a blast trying out different sound samples and seeing what clever uses of loops I can come up with.</p>
+
+  </div>
+
+  
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Eddie&#39;s Awesome Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>
+            
+              Eddie Prieto
+            
+            </li>
+            
+            <li><a href="mailto:eprieto.n@gmail.com">eprieto.n@gmail.com</a></li>
+            
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>A blog about music, Star Wars, technology, and sometimes all at the same time. 
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>
